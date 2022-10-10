@@ -1,2 +1,2 @@
-# Ra-unalna-grafika-uni-repo
+# Racunalna-grafika-uni-repo
 Repo for RG class
