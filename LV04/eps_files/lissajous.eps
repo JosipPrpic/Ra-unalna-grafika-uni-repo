@@ -1,0 +1,33 @@
+%formula za krivulju:
+% x = s*cos(a*t); y = V*sin(b*t)
+%procedura se poziva: S V a b L_krivulja
+
+/L_krivulja {
+    
+    /b exch def
+    /a exch def
+    /V exch def
+    /S exch def
+
+    S 0 moveto
+
+    0 0.1 360 {
+
+        /t exch def
+
+        %x = S * cos(a*t)
+        /x S a t mul cos mul def
+        %y = V*sin(b*t)
+        /y V b t mul sin mul def
+
+        x y lineto
+
+    } for
+} def
+
+400 400 translate
+
+100 300 13 32 L_krivulja stroke
+
+
+showpage
