@@ -1,0 +1,28 @@
+% hypotrochoid krivulja formula 
+% x=(a-b)*cos(t)+c*cos((a/b-1)t); 
+% y=(a-b)*sin(t)-c*sin((a/b-1)t)
+
+% procedura se poziva: a b c hypotrochoid 
+
+/hypotrochoid {
+
+	/c exch def
+	/b exch def
+	/a exch def
+
+% x = (a-b) + c
+
+a b sub c add 0 moveto 
+0 0.1 3600 {/t exch def
+	
+	/x a b sub t cos mul c a b div 1 sub t mul cos mul add def
+	/y a b sub t sin mul c a b div 1 sub t mul sin mul sub def
+	
+	x y lineto 
+} for 
+
+} def
+300 300 translate
+
+130 5 60 hypotrochoid stroke
+showpage
